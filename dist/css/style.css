@@ -1,0 +1,154 @@
+@import url('https://fonts.googleapis.com/css2?family=PT+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+*,
+::before,
+::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+html {
+  font-size: 62.5%;
+}
+body {
+  font-family: 'PT Sans', sans-serif;
+}
+
+.header {
+  background-image: linear-gradient(to bottom, transparent, #000),
+    url(../img/bg-2.jpg);
+  background-size: cover;
+  position: relative;
+  height: 100vh;
+}
+.logo-box {
+  position: absolute;
+  top: 5%;
+  left: 5%;
+  width: 12rem;
+}
+.logo-box img {
+  width: 100%;
+}
+.side-box {
+  position: absolute;
+  top: 5%;
+  right: 5%;
+}
+.side-box input {
+  display: inline-block;
+  padding: 1.5rem 4rem;
+  border-radius: 2rem;
+  font-size: 1.5rem;
+  text-align: center;
+  border: none;
+  text-transform: uppercase;
+}
+.side-box input:focus {
+  outline: none;
+  border: 2px solid #ea5455;
+}
+.primary-textbox {
+  position: absolute;
+  top: 15%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 25%;
+  text-align: center;
+  text-transform: capitalize;
+}
+.primary-textbox h2 {
+  font-size: 5rem;
+  color: #fff;
+}
+.city-box {
+  position: absolute;
+  top: 45%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80%;
+  cursor: grab;
+}
+/* Swiper Styles */
+.swiper {
+  width: 100%;
+  height: 100%;
+}
+.swiper-slide h2 {
+  font-size: 10rem;
+  text-align: center;
+  color: #fff;
+}
+.grid-of-3 {
+  display: grid;
+  grid-template-columns: repeat(3, 1.3fr);
+  justify-content: center;
+  margin: 0 2rem;
+}
+.grid-items {
+  justify-self: center;
+  padding: 0px 1rem;
+}
+.city-content__header h3 {
+  color: #eee;
+  font-size: 3rem;
+}
+.city-content__sub p {
+  color: #999;
+  font-size: 1.7rem;
+}
+.city-content__img {
+  margin-top: 1rem;
+  width: 100%;
+  height: 25rem;
+}
+.city-content__img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 1.5rem;
+}
+
+/* MEDIA QUERIES */
+@media screen and (max-width: 1024px) {
+  html {
+    font-size: 55%;
+  }
+}
+@media screen and (max-width: 768px) {
+  .city-content__header h3 {
+    font-size: 2rem;
+  }
+}
+@media screen and (max-width: 480px) {
+  html {
+    font-size: 50%;
+  }
+  .header {
+    height: 135vh;
+  }
+  .logo-box {
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  .side-box {
+    top: 10%;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  .primary-textbox {
+    width: 80%;
+    top: 20%;
+  }
+  .city-box {
+    top: 40%;
+  }
+  .swiper-slide h2 {
+    font-size: 6rem;
+  }
+  .grid-of-3 {
+    grid-template-columns: 100%;
+  }
+  .city-content__img {
+    height: 15rem;
+  }
+}

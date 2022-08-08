@@ -1,0 +1,11 @@
+{
+  "name": "tourx",
+  "version": "1.0.0",
+  "description": "A application to help give tour guides on diffrent cities across the world",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Blakcoder",
+  "license": "ISC"
+}
