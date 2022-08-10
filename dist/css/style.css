@@ -11,6 +11,7 @@ html {
 }
 body {
   font-family: 'PT Sans', sans-serif;
+  position: relative;
 }
 
 .header {
@@ -46,6 +47,39 @@ body {
 .side-box input:focus {
   outline: none;
   border: 2px solid #ea5455;
+}
+.search-container {
+  position: absolute;
+  top: 10%;
+  right: 0%;
+  width: 50%;
+  height: 30rem;
+  background-image: linear-gradient(to top, #cfd9df 0%, #e2ebf0 100%);
+  margin-top: 1rem;
+  overflow: auto;
+  z-index: 10;
+  display: none;
+}
+.search-container span {
+  font-size: 2rem;
+  display: block;
+  padding: 1rem 2rem;
+  position: relative;
+}
+.search-container span a {
+  color: #000;
+}
+.search-container span::after {
+  content: '';
+  display: inline-block;
+  width: 90%;
+  height: 0.2rem;
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #d7d7d7;
+  margin: 0 auto;
 }
 .primary-textbox {
   position: absolute;
@@ -108,6 +142,155 @@ body {
   border-radius: 1.5rem;
 }
 
+/* RESULT PAGE */
+.preloader {
+  position: fixed;
+  height: 100%;
+  width: 100%;
+  z-index: 100;
+  background-color: #fff;
+}
+.loader {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 10%;
+  margin: auto auto;
+}
+.loader img {
+  width: 100%;
+}
+.result-header {
+  display: grid;
+  grid-template-columns: repeat(2, 2fr);
+  justify-content: center;
+  height: 100vh;
+}
+.result-img {
+  background-image: linear-gradient(to bottom, transparent, #000000eb),
+    url(../img/bg-3.jpg);
+  background-size: cover;
+  height: inherit;
+  position: relative;
+}
+.result-img--content {
+  position: absolute;
+  top: 60%;
+  left: 5%;
+}
+.result-name {
+  margin-bottom: 1.5rem;
+}
+.result-name p {
+  color: #fff;
+  display: inline-block;
+  font-size: 3rem;
+  text-transform: uppercase;
+}
+.result-city {
+  margin-bottom: 8rem;
+  position: relative;
+}
+.result-city h2 {
+  font-size: 10rem;
+  color: #fff;
+}
+.divider {
+  display: block;
+  background-color: #eee;
+  width: 100%;
+  height: 0.3rem;
+  position: absolute;
+  top: 75%;
+  left: 0;
+}
+
+.result-img a {
+  display: inline-block;
+  text-decoration: underline;
+  color: #fff;
+  font-size: 1.8rem;
+  margin-right: 2rem;
+}
+.result-content {
+  display: grid;
+  grid-template-rows: 1.3fr 2.7fr;
+}
+.circle-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1.2fr);
+  justify-content: center;
+  grid-gap: 5rem;
+  margin: 5rem auto;
+}
+.circle {
+  height: 17rem;
+  width: 17rem;
+  border-radius: 50%;
+  background-image: conic-gradient(#00dbde 200deg, #eae8e8 0deg);
+  position: relative;
+}
+.circle::after {
+  content: '';
+  background-color: #fff;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 90%;
+  height: 90%;
+  border-radius: 50%;
+}
+.circle span {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 10;
+  text-align: center;
+}
+.circle span h2 {
+  font-size: 2rem;
+}
+.circle span h3 {
+  font-size: 4rem;
+}
+.result-content--main {
+  width: 100%;
+}
+.info_box {
+  display: grid;
+  grid-template-columns: 33% 33% 30%;
+  justify-content: center;
+  text-align: center;
+  margin-bottom: 2rem;
+  position: relative;
+}
+.info_box::after {
+  content: '';
+  display: inline-block;
+  width: 90%;
+  height: 0.2rem;
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #d7d7d7;
+  margin: 0 auto;
+}
+.info_box--head,
+.info_box--data {
+  align-self: center;
+  text-transform: uppercase;
+}
+.info_box--head h3 {
+  font-size: 1.7rem;
+}
+.info_box--data h2 {
+  font-size: 2rem;
+}
+
 /* MEDIA QUERIES */
 @media screen and (max-width: 1024px) {
   html {
@@ -118,13 +301,27 @@ body {
   .city-content__header h3 {
     font-size: 2rem;
   }
+  .result-header {
+    grid-template-columns: 4fr;
+  }
+  .result-img--content {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+  .circle-container {
+    grid-template-columns: repeat(2, 1.2fr);
+  }
+  .result-content {
+    grid-template-rows: 1.8fr 2.2fr;
+  }
 }
 @media screen and (max-width: 480px) {
   html {
     font-size: 50%;
   }
   .header {
-    height: 135vh;
+    height: 155vh;
   }
   .logo-box {
     left: 50%;
@@ -135,20 +332,26 @@ body {
     left: 50%;
     transform: translateX(-50%);
   }
+  .side-box input {
+    width: 100%;
+  }
   .primary-textbox {
     width: 80%;
     top: 20%;
   }
   .city-box {
     top: 40%;
+    width: 95%;
   }
   .swiper-slide h2 {
     font-size: 6rem;
+    margin-bottom: 2rem;
   }
   .grid-of-3 {
     grid-template-columns: 100%;
   }
   .city-content__img {
     height: 15rem;
+    margin-bottom: 3rem;
   }
 }
