@@ -7,6 +7,17 @@ if (UI.inputField) {
   })
 }
 
+//REDIRECT TO RESULT FROM DEFAULT LOCATIONS
+const defaultLocations = Array.from(UI.defaultLocationsLink)
+defaultLocations.forEach((cur) => {
+  cur.addEventListener('click', (e) => {
+    // SAVE ID(HREF) INTO SESSION
+    const id = cur.id
+    sessionStorage.setItem('ID', id)
+    location.assign(`${location.origin}/result.html`)
+  })
+})
+
 export const getInput = () => UI.inputField.value
 
 export const displaySuggestions = (resultsArr) => {
@@ -17,7 +28,7 @@ export const displaySuggestions = (resultsArr) => {
     UI.dataList.insertAdjacentHTML('beforeend', markup)
   })
 
-  // Redirect to details page
+  // REDIRECT TO RESULT PAGE FOR SEARCH RESULT
   const moreDetails = Array.from(document.querySelectorAll('.more_detail'))
   moreDetails.forEach((cur) => {
     cur.addEventListener('click', (e) => {

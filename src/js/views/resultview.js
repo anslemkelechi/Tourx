@@ -12,6 +12,33 @@ const checkValid = (data) => {
     return 'Unknown'
   }
 }
+// CONVERT NUMBER TO MATHEMATICAL FIGURES
+const convertNumber = (el) => {
+  const num = el.toString().split('')
+  console.log(num)
+  if (num.length === 4) {
+    num.splice(1, 0, ',')
+  } else if (num.length === 5) {
+    num.splice(2, 0, ',')
+  } else if (num.length === 6) {
+    num.splice(3, 0, ',')
+  } else if (num.length === 7) {
+    num.splice(1, 0, ',')
+    num.splice(5, 0, ',')
+  } else if (num.length === 8) {
+    num.splice(2, 0, ',')
+    num.splice(6, 0, ',')
+  } else if (num.length === 9) {
+    num.splice(3, 0, ',')
+    num.splice(7, 0, ',')
+  } else if (num.length === 10) {
+    num.splice(1, 0, ',')
+    num.splice(5, 0, ',')
+    num.splice(9, 0, ',')
+  }
+  return num.join('')
+}
+
 export const fillData = (
   data,
   moreData = 0,
@@ -63,9 +90,11 @@ export const fillData = (
   })
 
   checkValid(score) == 'Unknown'
-    ? [UI.safetyScore, UI.healthScore, UI.eduScore].forEach((cur) => {
-        cur.innerHTML = `<span><h4>Value Unknown</h4></span>`
-      })
+    ? [UI.safetyScore, UI.healthScore, UI.eduScore, UI.costScore].forEach(
+        (cur) => {
+          cur.innerHTML = `<span><h4>Value Unknown</h4></span>`
+        },
+      )
     : score.data.categories.forEach((cur) => {
         const convertFloat = (data) => {
           return Math.round((data * 100) / 10)
@@ -81,7 +110,9 @@ export const fillData = (
                 </span>
       `
           UI.safetyScore.insertAdjacentHTML('beforeend', markup)
-          UI.safetyScore.style.backgroundImage = `conic-gradient(#00dbde ${calcGradient(
+          UI.safetyScore.style.backgroundImage = `conic-gradient(${
+            cur.color
+          } ${calcGradient(
             convertFloat(cur.score_out_of_10),
           )}deg, #eae8e8 0deg)`
         } else if (cur.name == 'Healthcare') {
@@ -92,7 +123,22 @@ export const fillData = (
                 </span>
       `
           UI.healthScore.insertAdjacentHTML('beforeend', markup)
-          UI.healthScore.style.backgroundImage = `conic-gradient(#00dbde ${calcGradient(
+          UI.healthScore.style.backgroundImage = `conic-gradient(${
+            cur.color
+          } ${calcGradient(
+            convertFloat(cur.score_out_of_10),
+          )}deg, #eae8e8 0deg)`
+        } else if (cur.name == 'Cost of Living') {
+          const markup = `
+      <span>
+              <h3>${convertFloat(cur.score_out_of_10)}%</h3>
+                <h2>${cur.name} Score</h2>
+                </span>
+      `
+          UI.costScore.insertAdjacentHTML('beforeend', markup)
+          UI.costScore.style.backgroundImage = `conic-gradient(${
+            cur.color
+          } ${calcGradient(
             convertFloat(cur.score_out_of_10),
           )}deg, #eae8e8 0deg)`
         } else if (cur.name == 'Education') {
@@ -103,31 +149,46 @@ export const fillData = (
                 </span>
       `
           UI.eduScore.insertAdjacentHTML('beforeend', markup)
-          UI.eduScore.style.backgroundImage = `conic-gradient(#00dbde ${calcGradient(
+          UI.eduScore.style.backgroundImage = `conic-gradient(${
+            cur.color
+          } ${calcGradient(
             convertFloat(cur.score_out_of_10),
           )}deg, #eae8e8 0deg)`
         }
       })
   UI.citySummary.innerHTML =
     checkValid(score) == 'Unknown'
-      ? 'No Info, Data not found'
+      ? `<span><p>No Info, Data not found</p></span>`
       : score.data.summary
 
-  info.data.categories.forEach((cur) => {
-    cur.data.forEach((el) => {
-      if (el.id == 'POPULATION-SIZE') {
-        UI.population.textContent = `${el.float_value * 1000000}`
-      } else if (el.id == 'WEATHER-AVERAGE-HIGH') {
-        UI.tempHigh.innerHTML = `${el.string_value} &#x2103;`
-      } else if (el.id == 'WEATHER-AVERAGE-LOW') {
-        UI.tempLow.innerHTML = `${el.string_value} &#x2103;`
-      } else if (el.id == 'CURRENCY-URBAN-AREA') {
-        UI.currency.textContent = `${el.string_value}`
-      } else if (el.id == 'SPOKEN-LANGUAGES') {
-        UI.lang.textContent = `${el.string_value}`
-      } else if (el.id == 'NETWORK-DOWNLOAD') {
-        UI.DS.textContent = `${el.float_value}/mbs`
-      }
-    })
-  })
+  checkValid(info) == 'Unknown'
+    ? [
+        UI.population,
+        UI.tempHigh,
+        UI.tempLow,
+        UI.currency,
+        UI.lang,
+        UI.DS,
+      ].forEach((cur) => {
+        cur.textContent = 'Undisclosed'
+      })
+    : info.data.categories.forEach((cur) => {
+        cur.data.forEach((el) => {
+          if (el.id == 'POPULATION-SIZE') {
+            UI.population.textContent = `${convertNumber(
+              el.float_value * 1000000,
+            )}`
+          } else if (el.id == 'WEATHER-AVERAGE-HIGH') {
+            UI.tempHigh.innerHTML = `${el.string_value} &#x2103;`
+          } else if (el.id == 'WEATHER-AVERAGE-LOW') {
+            UI.tempLow.innerHTML = `${el.string_value} &#x2103;`
+          } else if (el.id == 'CURRENCY-URBAN-AREA') {
+            UI.currency.textContent = `${el.string_value}`
+          } else if (el.id == 'SPOKEN-LANGUAGES') {
+            UI.lang.textContent = `${el.string_value}`
+          } else if (el.id == 'NETWORK-DOWNLOAD') {
+            UI.DS.textContent = `${el.float_value}/mbs`
+          }
+        })
+      })
 }
