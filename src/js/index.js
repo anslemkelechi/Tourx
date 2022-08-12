@@ -51,17 +51,30 @@ if (UI.mainPage) {
 if (UI.resultPage) {
   const displayDetails = async () => {
     try {
+      //LOAD CITY DETAILS LINK FROM SESSION STORAGE BY CALLING loadData()//
       state.cityDetails = new Result()
       await state.cityDetails.loadData()
-      await state.cityDetails.moreData(state.cityDetails.data)
-      await state.cityDetails.loadImages(state.cityDetails.cityUrban)
-      // LOAD DATA TO UI
-      resultView.removeLoader()
-      resultView.fillData(
-        state.cityDetails.data,
-        state.cityDetails.cityUrban,
-        state.cityDetails.imageLinks,
-      )
+
+      // CHECK IF DETAILS HAS CITY-URBAN LINK & CALL URBAN CITY METHODS
+      if (state.cityDetails.checkLink(state.cityDetails.data)) {
+        await state.cityDetails.moreData(state.cityDetails.data)
+        await state.cityDetails.loadImages(state.cityDetails.cityUrban)
+        await state.cityDetails.loadScores(state.cityDetails.cityUrban)
+        await state.cityDetails.getGeneralInfo(state.cityDetails.cityUrban)
+
+        // LOAD DATA TO UI
+        resultView.removeLoader()
+        resultView.fillData(
+          state.cityDetails.data,
+          state.cityDetails.cityUrban,
+          state.cityDetails.imageLinks,
+          state.cityDetails.cityScores,
+          state.cityDetails.cityGenInfo,
+        )
+      } else {
+        resultView.removeLoader()
+        resultView.fillData(state.cityDetails.data)
+      }
     } catch (err) {
       console.log(err)
     }

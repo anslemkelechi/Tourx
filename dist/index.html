@@ -1,4 +1,229 @@
-<!doctype html><html lang="en"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Tourx | Get Popular Cities Data & Start Travelling</title><link rel="stylesheet" href="./css/style.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css"/><link rel="shortcut icon" href="./img/favicon.png" type="image/png"><script defer="defer" src="bundle.js"></script></head><body class="main-page"><header class="header"><div class="logo-box"><img src="./img/logo-white.png" alt="logo"></div><div class="side-box"><input list="search_res" class="search_res" placeholder="Search For Cities"></div><div class="search-container"></div><div class="primary-textbox"><h2>Beautiful Cities for your vacations</h2></div><div class="city-box"><div class="swiper mySwiper"><div class="swiper-wrapper"><div class="swiper-slide"><h2>USA</h2><div class="grid-of-3"><div class="grid-items"><div class="city-content"><div class="city-content__header"><h3>New York</h3></div><div class="city-content__sub"><p>New York</p></div><div class="city-content__img"><a href="#"><img src="./img/new-york.jpg" alt="New york City"></a></div></div></div><div class="grid-items"><div class="city-content"><div class="city-content__header"><h3>Las Vegas</h3></div><div class="city-content__sub"><p>Nevada</p></div><div class="city-content__img"><a href="#"><img src="./img/las-vegas.jpg" alt="New york City"></a></div></div></div><div class="grid-items"><div class="city-content"><div class="city-content__header"><h3>San Fransico</h3></div><div class="city-content__sub"><p>California</p></div><div class="city-content__img"><a href="#"><img src="./img/san-franc.jpg" alt="New york City"></a></div></div></div></div></div><div class="swiper-slide"><h2>UK</h2><div class="grid-of-3"><div class="grid-items"><div class="city-content"><div class="city-content__header"><h3>London</h3></div><div class="city-content__sub"><p>London</p></div><div class="city-content__img"><a href="#"><img src="./img/london.jpg" alt="London"></a></div></div></div><div class="grid-items"><div class="city-content"><div class="city-content__header"><h3>Manchester</h3></div><div class="city-content__sub"><p>Northwest England</p></div><div class="city-content__img"><a href="#"><img src="./img/manchester.jpg" alt="Manchester"></a></div></div></div><div class="grid-items"><div class="city-content"><div class="city-content__header"><h3>Liverpool</h3></div><div class="city-content__sub"><p>Northwest England</p></div><div class="city-content__img"><a href=""><img src="./img/san-franc.jpg" alt="Liverpool"></a></div></div></div></div></div><div class="swiper-slide"><h2>Nigeria</h2><div class="grid-of-3"><div class="grid-items"><div class="city-content"><div class="city-content__header"><h3>Ikoyi</h3></div><div class="city-content__sub"><p>Lagos State</p></div><div class="city-content__img"><a href="#"><img src="./img/lagos-3.jpg" alt="Lagos"></a></div></div></div><div class="grid-items"><div class="city-content"><div class="city-content__header"><h3>Kano</h3></div><div class="city-content__sub"><p>Kano</p></div><div class="city-content__img"><a href="#"><img src="./img/kano.jpg" alt="Kano"></a></div></div></div><div class="grid-items"><div class="city-content"><div class="city-content__header"><h3>Abuja</h3></div><div class="city-content__sub"><p>Abuja</p></div><div class="city-content__img"><a href="#"><img src="./img/abuja.jpg" alt="Abuja"></a></div></div></div></div></div><div class="swiper-slide"><h2>France</h2><div class="grid-of-3"><div class="grid-items"><div class="city-content"><div class="city-content__header"><h3>Paris</h3></div><div class="city-content__sub"><p>Paris</p></div><div class="city-content__img"><a href="#"><img src="./img/paris.jpg" alt="Paris city"></a></div></div></div><div class="grid-items"><div class="city-content"><div class="city-content__header"><h3>Nice</h3></div><div class="city-content__sub"><p>Alpes-Maritimes</p></div><div class="city-content__img"><a href="#"><img src="./img/nice.jpg" alt="Nice City"></a></div></div></div><div class="grid-items"><div class="city-content"><div class="city-content__header"><h3>Monaco</h3></div><div class="city-content__sub"><p>Principality Of Monaco</p></div><div class="city-content__img"><a href="#"><img src="./img/monaco.jpg" alt="Monaco City"></a></div></div></div></div></div><div class="swiper-slide"><h2>Japan</h2><div class="grid-of-3"><div class="grid-items"><div class="city-content"><div class="city-content__header"><h3>Tokyo</h3></div><div class="city-content__sub"><p>Tokyo</p></div><div class="city-content__img"><a href="#"><img src="./img/tokyo.jpg" alt="Tokyo City"></a></div></div></div><div class="grid-items"><div class="city-content"><div class="city-content__header"><h3>Osaka</h3></div><div class="city-content__sub"><p>Island of Honshu</p></div><div class="city-content__img"><a href="#"><img src="./img/osaka.jpg" alt="Osaka"></a></div></div></div><div class="grid-items"><div class="city-content"><div class="city-content__header"><h3>Yokohama</h3></div><div class="city-content__sub"><p>South Of Toyko</p></div><div class="city-content__img"><a href="#"><img src="./img/yokohama.jpg" alt="Yokohama"></a></div></div></div></div></div></div></div></div></header><script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script><script>var Swiper = new Swiper(".mySwiper",{
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tourx | Get Popular Cities Data & Start Travelling</title>
+    <link rel="stylesheet" href="./css/style.css">
+    <!-- Swiper CSS -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css"
+    />
+    <link rel="shortcut icon" href="./img/favicon.png" type="image/png">
+<script defer src="bundle.js"></script></head>
+<body class="main-page">
+    <header class="header">
+        <div class="logo-box">
+            <img src="./img/logo-white.png" alt="logo">
+        </div>
+        <div class="side-box">
+            <input type="text" list="search_res" class="search_res" placeholder="Search For Cities"> 
+        </div>
+        <div class="search-container">
+            </div>
+        <div class="primary-textbox">
+            <h2>Beautiful Cities for your vacations</h2>
+        </div>
+        <!-- Slider Content -->
+        <div class="city-box">
+            <div class="swiper mySwiper">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide"><h2>USA</h2>
+                        <div class="grid-of-3">
+                            <div class="grid-items">
+                                <div class="city-content">
+                                    <div class="city-content__header"><h3>New York</h3></div>
+                                    <div class="city-content__sub">
+                                        <p>New York</p>
+                                    </div>
+                                    <div class="city-content__img">
+                                       <a href="#"><img src="./img/new-york.jpg" alt="New york City"></a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="grid-items">
+                                 <div class="city-content">
+                                    <div class="city-content__header"><h3>Las Vegas</h3></div>
+                                    <div class="city-content__sub">
+                                        <p>Nevada</p>
+                                    </div>
+                                    <div class="city-content__img">
+                                       <a href="#"><img src="./img/las-vegas.jpg" alt="New york City"></a> 
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="grid-items">
+                                 <div class="city-content">
+                                    <div class="city-content__header"><h3>San Fransico</h3></div>
+                                    <div class="city-content__sub">
+                                        <p>California</p>
+                                    </div>
+                                    <div class="city-content__img">
+                                      <a href="#"><img src="./img/san-franc.jpg" alt="New york City"></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide"><h2>UK</h2>
+                    <div class="grid-of-3">
+                            <div class="grid-items">
+                                <div class="city-content">
+                                    <div class="city-content__header"><h3>London</h3></div>
+                                    <div class="city-content__sub">
+                                        <p>London</p>
+                                    </div>
+                                    <div class="city-content__img">
+                                       <a href="#"><img src="./img/london.jpg" alt="London"></a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="grid-items">
+                                 <div class="city-content">
+                                    <div class="city-content__header"><h3>Manchester</h3></div>
+                                    <div class="city-content__sub">
+                                        <p>Northwest England</p>
+                                    </div>
+                                    <div class="city-content__img">
+                                       <a href="#"><img src="./img/manchester.jpg" alt="Manchester"></a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="grid-items">
+                                 <div class="city-content">
+                                    <div class="city-content__header"><h3>Liverpool</h3></div>
+                                    <div class="city-content__sub">
+                                        <p>Northwest England</p>
+                                    </div>
+                                    <div class="city-content__img">
+                                    <a href=""><img src="./img/san-franc.jpg" alt="Liverpool"></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide"><h2>Nigeria</h2>
+                    <div class="grid-of-3">
+                            <div class="grid-items">
+                                <div class="city-content">
+                                    <div class="city-content__header"><h3>Ikoyi</h3></div>
+                                    <div class="city-content__sub">
+                                        <p>Lagos State</p>
+                                    </div>
+                                    <div class="city-content__img">
+                                       <a href="#"><img src="./img/lagos-3.jpg" alt="Lagos"></a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="grid-items">
+                                 <div class="city-content">
+                                    <div class="city-content__header"><h3>Kano</h3></div>
+                                    <div class="city-content__sub">
+                                        <p>Kano</p>
+                                    </div>
+                                    <div class="city-content__img">
+                                       <a href="#"><img src="./img/kano.jpg" alt="Kano"></a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="grid-items">
+                                 <div class="city-content">
+                                    <div class="city-content__header"><h3>Abuja</h3></div>
+                                    <div class="city-content__sub">
+                                        <p>Abuja</p>
+                                    </div>
+                                    <div class="city-content__img">
+                                       <a href="#"><img src="./img/abuja.jpg" alt="Abuja"></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="swiper-slide"><h2>France</h2>
+                    <div class="grid-of-3">
+                            <div class="grid-items">
+                                <div class="city-content">
+                                    <div class="city-content__header"><h3>Paris</h3></div>
+                                    <div class="city-content__sub">
+                                        <p>Paris</p>
+                                    </div>
+                                    <div class="city-content__img">
+                                      <a href="#"><img src="./img/paris.jpg" alt="Paris city"></a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="grid-items">
+                                 <div class="city-content">
+                                    <div class="city-content__header"><h3>Nice</h3></div>
+                                    <div class="city-content__sub">
+                                        <p>Alpes-Maritimes</p>
+                                    </div>
+                                    <div class="city-content__img">
+                                       <a href="#"><img src="./img/nice.jpg" alt="Nice City"></a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="grid-items">
+                                 <div class="city-content">
+                                    <div class="city-content__header"><h3>Monaco</h3></div>
+                                    <div class="city-content__sub">
+                                        <p>Principality Of Monaco</p>
+                                    </div>
+                                    <div class="city-content__img">
+                                       <a href="#"><img src="./img/monaco.jpg" alt="Monaco City"></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide"><h2>Japan</h2>
+                    <div class="grid-of-3">
+                            <div class="grid-items">
+                                <div class="city-content">
+                                    <div class="city-content__header"><h3>Tokyo</h3></div>
+                                    <div class="city-content__sub">
+                                        <p>Tokyo</p>
+                                    </div>
+                                    <div class="city-content__img">
+                                       <a href="#"><img src="./img/tokyo.jpg" alt="Tokyo City"></a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="grid-items">
+                                 <div class="city-content">
+                                    <div class="city-content__header"><h3>Osaka</h3></div>
+                                    <div class="city-content__sub">
+                                        <p>Island of Honshu</p>
+                                    </div>
+                                    <div class="city-content__img">
+                                       <a href="#"><img src="./img/osaka.jpg" alt="Osaka"></a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="grid-items">
+                                 <div class="city-content">
+                                    <div class="city-content__header"><h3>Yokohama</h3></div>
+                                    <div class="city-content__sub">
+                                        <p>South Of Toyko</p>
+                                    </div>
+                                    <div class="city-content__img">
+                                       <a href="#"><img src="./img/yokohama.jpg" alt="Yokohama"></a> 
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- <div class="swiper-pagination"></div> -->
+            </div>
+        </div>
+    </header>
+      <script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
+      <script>
+        var Swiper = new Swiper(".mySwiper",{
             slidesPerView: 1.5,
             spaceBetween: 30,
             freeMode: true,
@@ -6,4 +231,8 @@
             el: ".swiper-pagination",
             clickable: true,
             },
-        })</script></body></html>
+        })
+
+      </script>
+</body>
+</html>

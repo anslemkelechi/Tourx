@@ -1,5 +1,12 @@
 import { UI } from '../base'
 
+// CLEAR INPUT FEILD WHEN PAGE RELOADS
+if (UI.inputField) {
+  window.addEventListener('load', () => {
+    UI.inputField.value = ''
+  })
+}
+
 export const getInput = () => UI.inputField.value
 
 export const displaySuggestions = (resultsArr) => {

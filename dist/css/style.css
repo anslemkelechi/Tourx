@@ -50,8 +50,8 @@ body {
 }
 .search-container {
   position: absolute;
-  top: 10%;
-  right: 0%;
+  top: 13%;
+  right: 1%;
   width: 50%;
   height: 30rem;
   background-image: linear-gradient(to top, #cfd9df 0%, #e2ebf0 100%);
@@ -171,12 +171,13 @@ body {
   background-image: linear-gradient(to bottom, transparent, #000000eb),
     url(../img/bg-3.jpg);
   background-size: cover;
+  background-position: center;
   height: inherit;
   position: relative;
 }
 .result-img--content {
   position: absolute;
-  top: 60%;
+  top: 55%;
   left: 5%;
 }
 .result-name {
@@ -195,6 +196,12 @@ body {
 .result-city h2 {
   font-size: 10rem;
   color: #fff;
+  margin-bottom: 2rem;
+}
+.result-city p {
+  color: #eee;
+  font-size: 1.6rem;
+  line-height: 1.2;
 }
 .divider {
   display: block;
@@ -298,6 +305,11 @@ body {
   }
 }
 @media screen and (max-width: 768px) {
+  .search-container {
+    right: 50%;
+    transform: translateX(50%);
+    width: 90%;
+  }
   .city-content__header h3 {
     font-size: 2rem;
   }
@@ -308,6 +320,7 @@ body {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+    width: 90%;
   }
   .circle-container {
     grid-template-columns: repeat(2, 1.2fr);
@@ -353,5 +366,8 @@ body {
   .city-content__img {
     height: 15rem;
     margin-bottom: 3rem;
+  }
+  .result-header {
+    height: 50vh;
   }
 }
