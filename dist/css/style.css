@@ -328,6 +328,9 @@ body {
   .result-content {
     grid-template-rows: 1.8fr 2.2fr;
   }
+  .loader {
+    width:65%;
+  }
 }
 @media screen and (max-width: 480px) {
   html {
