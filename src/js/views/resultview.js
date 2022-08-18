@@ -70,7 +70,7 @@ export const fillData = (
     })`
 
   //LOAD MOBILE IMG OM RESIZING
-  window.addEventListener('resize', () => {
+  window.addEventListener('load', () => {
     let x = window.matchMedia('(max-width:768px)')
     if (x.matches) {
       UI.pageImg.style.backgroundImage = `linear-gradient(to bottom, transparent, #000000eb),

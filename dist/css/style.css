@@ -65,6 +65,17 @@ body {
   display: block;
   padding: 1rem 2rem;
   position: relative;
+  cursor: pointer;
+}
+.search-container span:hover {
+  background-image: linear-gradient(
+    45deg,
+    #ff9a9e 0%,
+    #fad0c4 99%,
+    #fad0c4 100%
+  );
+  padding: 1rem 2rem;
+  color: #eee;
 }
 .search-container span a {
   color: #000;
@@ -304,7 +315,7 @@ body {
     font-size: 55%;
   }
 }
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 900px) {
   .search-container {
     right: 50%;
     transform: translateX(50%);
@@ -329,7 +340,7 @@ body {
     grid-template-rows: 1.8fr 2.2fr;
   }
   .loader {
-    width:65%;
+    width: 65%;
   }
 }
 @media screen and (max-width: 480px) {
