@@ -312,7 +312,13 @@ body {
 /* MEDIA QUERIES */
 @media screen and (max-width: 1024px) {
   html {
-    font-size: 55%;
+    font-size: 50%;
+  }
+  .circle-container {
+    grid-gap: 2rem;
+  }
+  .result-content {
+    padding: 0rem 1rem;
   }
 }
 @media screen and (max-width: 900px) {
@@ -358,7 +364,7 @@ body {
     top: 10%;
     left: 50%;
     transform: translateX(-50%);
-    width:80%;
+    width: 80%;
   }
   .side-box input {
     width: 100%;

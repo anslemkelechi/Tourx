@@ -15,7 +15,6 @@ const checkValid = (data) => {
 // CONVERT NUMBER TO MATHEMATICAL FIGURES
 const convertNumber = (el) => {
   const num = el.toString().split('')
-  console.log(num)
   if (num.length === 4) {
     num.splice(1, 0, ',')
   } else if (num.length === 5) {
@@ -70,24 +69,22 @@ export const fillData = (
     })`
 
   //LOAD MOBILE IMG OM RESIZING
-  window.addEventListener('load', () => {
-    let x = window.matchMedia('(max-width:768px)')
-    if (x.matches) {
-      UI.pageImg.style.backgroundImage = `linear-gradient(to bottom, transparent, #000000eb),
+  let x = window.matchMedia('(max-width:768px)')
+  if (x.matches) {
+    UI.pageImg.style.backgroundImage = `linear-gradient(to bottom, transparent, #000000eb),
     url(${
       checkValid(imageData) == 'Unknown'
         ? '../img/bg-3.jpg'
         : imageData['data'].photos[0].image.mobile
     })`
-    } else {
-      UI.pageImg.style.backgroundImage = `linear-gradient(to bottom, transparent, #000000eb),
+  } else {
+    UI.pageImg.style.backgroundImage = `linear-gradient(to bottom, transparent, #000000eb),
     url(${
       checkValid(imageData) == 'Unknown'
         ? '../img/bg-3.jpg'
         : imageData['data'].photos[0].image.web
     })`
-    }
-  })
+  }
 
   checkValid(score) == 'Unknown'
     ? [UI.safetyScore, UI.healthScore, UI.eduScore, UI.costScore].forEach(
