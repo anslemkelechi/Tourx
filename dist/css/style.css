@@ -358,6 +358,7 @@ body {
     top: 10%;
     left: 50%;
     transform: translateX(-50%);
+    width:80%;
   }
   .side-box input {
     width: 100%;
